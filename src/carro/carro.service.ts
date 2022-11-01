@@ -1,42 +1,42 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CreateItemDto } from './dto/create-item.dto';
-import { UpdateItemDto } from './dto/update-item.dto';
-import { Item } from './entities/carro.entity';
+import { CreateCarroDto } from './dto/create-carro.dto';
+import { UpdateCarroDto } from './dto/update-carro.dto';
+import { Carro } from './entities/carro.entity';
 
 @Injectable()
-export class ItemService {
+export class CarroService {
   constructor(
-    @InjectRepository(Item) private readonly repository: Repository<Item>,
+    @InjectRepository(Carro) private readonly repository: Repository<Carro>,
   ) {}
 
-  create(createItemDto: CreateItemDto): Promise<Item> {
-    const item = this.repository.create(createItemDto);
-    return this.repository.save(item);
+  create(createCarroDto: CreateCarroDto): Promise<Carro> {
+    const carro = this.repository.create(createCarroDto);
+    return this.repository.save(carro);
   }
 
-  findAll(): Promise<Item[]> {
+  findAll(): Promise<Carro[]> {
     return this.repository.find();
   }
 
-  findOne(id: string): Promise<Item> {
+  findOne(id: string): Promise<Carro> {
     return this.repository.findOne({ where: { id } });
   }
 
-  async update(id: string, updateItemDto: UpdateItemDto): Promise<Item> {
-    const item = await this.repository.preload({
+  async update(id: string, updateCarroDto: UpdateCarroDto): Promise<Carro> {
+    const carro = await this.repository.preload({
       id: id,
-      ...updateItemDto,
+      ...updateCarroDto,
     });
-    if (!item) {
-      throw new NotFoundException(`Item ${id} not found`);
+    if (!carro) {
+      throw new NotFoundException(`Carro ${id} not found`);
     }
-    return this.repository.save(item);
+    return this.repository.save(carro);
   }
 
   async remove(id: string) {
-    const item = await this.findOne(id);
-    return this.repository.remove(item);
+    const carro = await this.findOne(id);
+    return this.repository.remove(carro);
   }
 }

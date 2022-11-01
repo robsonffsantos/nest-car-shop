@@ -8,7 +8,7 @@ import {
 } from 'typeorm';
 
 @Entity()
-export class Item extends BaseEntity {
+export class Carro extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
