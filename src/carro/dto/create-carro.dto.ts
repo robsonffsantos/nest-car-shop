@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { IsNotEmpty, IsString, Min } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
@@ -28,6 +29,6 @@ export class CreateCarroDto {
   @IsNotEmpty()
   @IsString()
   @Min(0)
-  @ApiProperty({ example: '20000.00' })
+  @ApiProperty({ example: '200000' })
   value: number;
 }
