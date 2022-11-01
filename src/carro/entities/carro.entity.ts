@@ -29,4 +29,7 @@ export class Carro extends BaseEntity {
 
   @Column({ name: 'photo', type: 'varchar', length: 255 })
   photo: string;
+
+  @Column({ name: 'value', type: 'float' })
+  value: number;
 }

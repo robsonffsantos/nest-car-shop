@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsString, Min } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateCarroDto {
@@ -24,4 +24,10 @@ export class CreateCarroDto {
       'https://png.pngtree.com/png-clipart/20190520/original/pngtree-cute-car-cartoon-vector-illustration-png-image_3755506.jpg',
   })
   photo: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @Min(0)
+  @ApiProperty({ example: '20000.00' })
+  value: number;
 }
