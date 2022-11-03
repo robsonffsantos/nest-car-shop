@@ -1,4 +1,4 @@
-# Integração React e NextJs
+# Integração React e NestJs
 
 ### Autor
 [Robson Fernando](https://www.linkedin.com/in/robsonffdossantos/)
