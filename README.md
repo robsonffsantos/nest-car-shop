@@ -29,7 +29,7 @@ Após o download do repositório, abra um editor de código (vsCode, por exemplo
 Basta acessar [este endereço](http://localhost:3000/api#/) para ter acesso a todas as rotas disponíveis. O endereço só funcionará se o back-end estiver rodando na sua máquina.
 
 * Para acessar o banco de dados
-Você deverá ter o [docker](https://docs.docker.com/desktop/install/windows-install/) instalado na sua máquina, além de ter um workbench como o [mySql](https://dev.mysql.com/downloads/workbench/) instalado na sua máquina. Pelo editor de código execute o comando <b>docker-compose up</b> e aguarde a instalação no docker.
+Você deverá ter o [docker](https://docs.docker.com/desktop/install/windows-install/) instalado na sua máquina, além de ter um workbench como o [mySql](https://dev.mysql.com/downloads/workbench/) na sua máquina. Pelo editor de código execute o comando <b>docker-compose up</b> e aguarde a instalação no docker.
 
 No banco de dados, procure a opção de adicionar uma nova conexão e preencha os seguintes itens:
 
