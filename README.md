@@ -21,9 +21,29 @@ Nesse projeto utilizei as seguintes ferramentas:
 ### Como rodar o projeto
 
 * Para rodar o back-end
-Será necessário ter o [gitBash](https://git-scm.com/downloads) instalado na sua máquina. Abra no local onde você deseja salvar o repositório e rode o comando git clone https://github.com/robsonffsantos/nest-car-shop.git
+Será necessário ter o [git](https://git-scm.com/downloads) instalado na sua máquina. Abra no local onde você deseja salvar o repositório e rode o comando git clone https://github.com/robsonffsantos/nest-car-shop.git
 
-Após o download do repositório, abra um editor de código (vsCode, por exemplo) e navegue até a pasta src. Faça a instação das ferramentas necessárias com npm install ou yarn add. Após a instalação finalizar, digite o comando npm run start ou yarn start para obter um endereço local e poder visualizar na sua API Client de preferência. Recomendo utilizar o [Postman](https://www.postman.com/downloads/) ou o [Insomnia](https://insomnia.rest/download).
+Execute os comandos:
+
+```bash
+    # instalar
+    yarn install
+
+    # Instalação do DynamoDB
+    yarn db:install
+
+    # Inicializar o DynamoDB
+    yarn db:start
+
+    # Configure seu aws-sdk
+    serverless config credentials --provider aws --key=KEY_AWS --secret SECRET_KEY_AWS -o
+
+    # Inicializar a aplicação
+    yarn dev
+
+```
+
+Para realizar as consulta recomendo utilizar o [Postman](https://www.postman.com/downloads/) ou o [Insomnia](https://insomnia.rest/download).
 
 * Para saber quais rotas testar
 Basta acessar [este endereço](http://localhost:3000/api#/) para ter acesso a todas as rotas disponíveis. O endereço só funcionará se o back-end estiver rodando na sua máquina.
